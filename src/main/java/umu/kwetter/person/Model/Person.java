@@ -5,10 +5,11 @@ import lombok.*;
 import java.io.Serializable;
 
 @Entity
-@Table(name= "persons")
+@Table(name= "accounts")
 @Getter
 @Setter
 @NoArgsConstructor
+@AllArgsConstructor
 public class Person implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,6 +20,10 @@ public class Person implements Serializable {
     public String password;
     @Column(name = "role", nullable = false)
     public String role;
+
+    public Person(){
+
+    }
 
     public Person(Long id, String username, String password, String role)
     {
